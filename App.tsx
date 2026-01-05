@@ -42,76 +42,13 @@ const Marquee: React.FC = () => (
 );
 
 const Countdown: React.FC = () => {
-  const [timeLeft, setTimeLeft] = useState({ days: 14, hours: 12, minutes: 45, seconds: 18 });
-
-  useEffect(() => {
-    // Persistent Countdown Logic
-    const STORAGE_KEY = 'vibeSync_launch_target';
-    let targetTime = localStorage.getItem(STORAGE_KEY);
-    let targetDate: number;
-
-    if (targetTime) {
-      targetDate = parseInt(targetTime, 10);
-      // If the stored date is in the past (demo expired), reset it to the future
-      if (Date.now() > targetDate) {
-        const now = new Date();
-        now.setDate(now.getDate() + 14);
-        now.setHours(now.getHours() + 12);
-        targetDate = now.getTime();
-        localStorage.setItem(STORAGE_KEY, targetDate.toString());
-      }
-    } else {
-      // First visit: Set target to 14 days, 12 hours from now
-      const now = new Date();
-      now.setDate(now.getDate() + 14);
-      now.setHours(now.getHours() + 12);
-      targetDate = now.getTime();
-      localStorage.setItem(STORAGE_KEY, targetDate.toString());
-    }
-
-    const updateTimer = () => {
-      const now = Date.now();
-      const difference = targetDate - now;
-
-      if (difference <= 0) {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-      } else {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-        setTimeLeft({ days, hours, minutes, seconds });
-      }
-    };
-
-    // Run immediately then interval
-    updateTimer();
-    const interval = setInterval(updateTimer, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const format = (n: number) => n.toString().padStart(2, '0');
-
   return (
     <div className="flex flex-col items-center my-8">
       <p className="text-sm font-bold text-violet-400 tracking-widest uppercase mb-4 animate-pulse">
         THE FIRST DROP GOES LIVE IN:
       </p>
-      <div className="flex justify-center gap-4 md:gap-8 font-mono">
-        {[
-          { val: format(timeLeft.days), label: 'Days' },
-          { val: format(timeLeft.hours), label: 'Hours' },
-          { val: format(timeLeft.minutes), label: 'Mins' },
-          { val: format(timeLeft.seconds), label: 'Secs' }
-        ].map((t, i) => (
-          <div key={i} className="flex flex-col items-center">
-            <div className="text-3xl md:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500 tabular-nums">
-              {t.val}
-            </div>
-            <div className="text-[10px] md:text-xs uppercase tracking-widest text-slate-500 mt-1">{t.label}</div>
-          </div>
-        ))}
+      <div className="text-4xl md:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500">
+        14 days
       </div>
     </div>
   );
