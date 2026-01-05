@@ -256,53 +256,210 @@ const LandingPage: React.FC<{ onLaunch: () => void }> = ({ onLaunch }) => {
       <section id="vision" className="py-24 md:py-32 border-t border-white/5 bg-gradient-to-b from-slate-950 to-indigo-950/20">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-16">
-            <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-violet-500 mb-2">The Superpowers</h2>
+            <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-violet-500 mb-2">The Journey</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
 
-            {/* FEATURE 2: UNLIMITED ROOMS - Highlighted Large Card */}
-            <div className="md:col-span-2 bg-[#1ed760] text-black rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_0_50px_rgba(30,215,96,0.3)] transform hover:scale-[1.01] transition duration-300 group overflow-hidden relative cursor-default">
+            {/* HERO FEATURE: SPOTIFY JAM BUT BETTER */}
+            <div className="md:col-span-2 relative rounded-3xl p-8 md:p-12 overflow-hidden group cursor-default border border-violet-500/20 bg-gradient-to-br from-slate-900 via-slate-900 to-violet-950/30 hover:border-violet-500/40 transition-all duration-500">
+              {/* Animated Background Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-r from-violet-600/10 via-purple-600/10 to-pink-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
               {/* Noise Texture */}
-              <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-multiply"></div>
+              <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5"></div>
 
-              <div className="relative z-10 text-center md:text-left flex-1">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/10 backdrop-blur-md text-xs font-black uppercase tracking-widest mb-4 border border-black/5">
-                  <Users size={12} /> Social Core
+              <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div className="text-center md:text-left flex-1">
+                  {/* Badge */}
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-black uppercase tracking-widest mb-6 group-hover:bg-violet-500/20 transition-colors duration-300">
+                    <Users size={14} />
+                    <span>Like Spotify Jam</span>
+                  </div>
+
+                  {/* Heading */}
+                  <h3 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 leading-none uppercase">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-violet-200 to-purple-200">
+                      But Better
+                    </span>
+                    <span className="block text-2xl md:text-3xl text-violet-400 mt-2 font-bold">🎧</span>
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed mb-6">
+                    Same vibe, unlimited rooms. Drop in, mute up, or take the aux. <span className="text-white font-bold">You control the vibe.</span>
+                  </p>
+
+                  {/* Feature Pills */}
+                  <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+                    <div className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-slate-300">
+                      ∞ Unlimited Rooms
+                    </div>
+                    <div className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-slate-300">
+                      🎵 Real-time Sync
+                    </div>
+                    <div className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-slate-300">
+                      👥 Social First
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-4xl md:text-6xl font-black tracking-tighter mb-4 leading-none uppercase">🏠 UNLIMITED ROOMS</h3>
-                <p className="text-lg md:text-xl font-bold opacity-80 max-w-xl leading-relaxed">
-                  Drop in, mute up, or take the aux. You control the vibe.
-                </p>
-              </div>
 
-              <div className="relative z-10 shrink-0">
-                <div className="w-24 h-24 md:w-32 md:h-32 bg-black rounded-full flex items-center justify-center ring-4 ring-black/10 animate-pulse shadow-2xl">
-                  <Radio size={48} className="text-[#1ed760] md:w-16 md:h-16" />
+                {/* Icon */}
+                <div className="relative shrink-0">
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-2xl shadow-violet-500/30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                    <Radio size={64} className="text-white md:w-20 md:h-20" />
+                  </div>
+                  {/* Glow Effect */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-violet-500 to-purple-600 blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
                 </div>
               </div>
             </div>
 
-            {/* FEATURE 1: PHYSICS-DEFYING SYNC */}
-            <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition group flex flex-col items-center text-center md:items-start md:text-left">
-              <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300 text-slate-400 group-hover:text-white">
-                <Zap size={24} />
-              </div>
-              <h4 className="font-black text-xl mb-2 text-white uppercase">⚡️ PHYSICS-DEFYING SYNC</h4>
-              <p className="text-sm text-slate-400 leading-relaxed font-medium">
-                Not "low latency." No latency. We rewrote the audio stack from scratch.
-              </p>
-            </div>
+            {/* VERTICAL ROADMAP */}
+            <div className="relative max-w-5xl mx-auto px-4 md:px-0">
 
-            {/* FEATURE 3: NO ADS */}
-            <div className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition group flex flex-col items-center text-center md:items-start md:text-left">
-              <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300 text-slate-400 group-hover:text-white">
-                <Star size={24} />
+              {/* Central Glowing Line (Desktop) / Left Line (Mobile) */}
+              <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-violet-600 via-fuchsia-600 to-transparent -translate-x-1/2 shadow-[0_0_20px_rgba(124,58,237,0.5)]"></div>
+
+              <div className="flex flex-col gap-16 md:gap-32 relative z-10 py-10">
+
+                {/* STEP 1: See Friends Play */}
+                <div className="relative flex flex-col md:flex-row items-center md:justify-between group w-full">
+                  <div className="w-full md:w-[45%] pl-16 md:pl-0 text-left md:text-right">
+                    <div className="inline-block p-6 rounded-3xl bg-slate-900/40 backdrop-blur-md border border-white/10 hover:border-violet-500/40 transition-all duration-500 hover:bg-slate-900/60 shadow-2xl group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_-15px_rgba(124,58,237,0.3)]">
+                      <div className="text-5xl md:text-6xl mb-4 opacity-90">👀</div>
+                      <h3 className="text-xl md:text-2xl font-black text-white mb-2 uppercase tracking-wide">See Friends Play</h3>
+                      <p className="text-slate-400 text-sm md:text-base leading-relaxed font-medium">See who's online and what they're listening to right now.</p>
+                    </div>
+                  </div>
+
+                  {/* Timeline Node */}
+                  <div className="absolute left-[28px] md:left-1/2 top-0 md:top-1/2 w-10 h-10 md:w-16 md:h-16 -translate-x-1/2 md:-translate-y-1/2 rounded-full bg-slate-950 border-4 border-violet-600 shadow-[0_0_30px_rgba(124,58,237,0.6)] flex items-center justify-center z-20 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-3 h-3 md:w-5 md:h-5 rounded-full bg-white animate-pulse"></div>
+                  </div>
+
+                  <div className="hidden md:block w-[45%] text-left pl-12">
+                    <div className="text-violet-500/10 font-black text-[8rem] leading-none select-none group-hover:text-violet-500/20 transition-colors duration-500">01</div>
+                  </div>
+                </div>
+
+                {/* STEP 2: Live Status (Right Side Desktop) */}
+                <div className="relative flex flex-col md:flex-row items-center md:justify-between group w-full">
+                  <div className="hidden md:block w-[45%] text-right pr-12">
+                    <div className="text-green-500/10 font-black text-[8rem] leading-none select-none group-hover:text-green-500/20 transition-colors duration-500">02</div>
+                  </div>
+
+                  <div className="absolute left-[28px] md:left-1/2 top-0 md:top-1/2 w-10 h-10 md:w-16 md:h-16 -translate-x-1/2 md:-translate-y-1/2 rounded-full bg-slate-950 border-4 border-green-500 shadow-[0_0_30px_rgba(34,197,94,0.6)] flex items-center justify-center z-20 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-3 h-3 md:w-5 md:h-5 rounded-full bg-white animate-pulse"></div>
+                  </div>
+
+                  <div className="w-full md:w-[45%] pl-16 md:pl-12 text-left">
+                    <div className="inline-block p-6 rounded-3xl bg-slate-900/40 backdrop-blur-md border border-white/10 hover:border-green-500/40 transition-all duration-500 hover:bg-slate-900/60 shadow-2xl group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_-15px_rgba(34,197,94,0.3)]">
+                      <div className="text-5xl md:text-6xl mb-4 opacity-90">🟢</div>
+                      <h3 className="text-xl md:text-2xl font-black text-white mb-2 uppercase tracking-wide">Live Status</h3>
+                      <p className="text-slate-400 text-sm md:text-base leading-relaxed font-medium">See who's online and join instantly.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* STEP 3: Zero Latency */}
+                <div className="relative flex flex-col md:flex-row items-center md:justify-between group w-full">
+                  <div className="w-full md:w-[45%] pl-16 md:pl-0 text-left md:text-right">
+                    <div className="inline-block p-6 rounded-3xl bg-slate-900/40 backdrop-blur-md border border-white/10 hover:border-yellow-500/40 transition-all duration-500 hover:bg-slate-900/60 shadow-2xl group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_-15px_rgba(234,179,8,0.3)]">
+                      <div className="text-5xl md:text-6xl mb-4 opacity-90">⚡️</div>
+                      <h3 className="text-xl md:text-2xl font-black text-white mb-2 uppercase tracking-wide">Zero Latency</h3>
+                      <p className="text-slate-400 text-sm md:text-base leading-relaxed font-medium">Perfect sync. Same millisecond.</p>
+                    </div>
+                  </div>
+
+                  <div className="absolute left-[28px] md:left-1/2 top-0 md:top-1/2 w-10 h-10 md:w-16 md:h-16 -translate-x-1/2 md:-translate-y-1/2 rounded-full bg-slate-950 border-4 border-yellow-500 shadow-[0_0_30px_rgba(234,179,8,0.6)] flex items-center justify-center z-20 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-3 h-3 md:w-5 md:h-5 rounded-full bg-white animate-pulse"></div>
+                  </div>
+
+                  <div className="hidden md:block w-[45%] text-left pl-12">
+                    <div className="text-yellow-500/10 font-black text-[8rem] leading-none select-none group-hover:text-yellow-500/20 transition-colors duration-500">03</div>
+                  </div>
+                </div>
+
+                {/* STEP 4: No Ads Ever */}
+                <div className="relative flex flex-col md:flex-row items-center md:justify-between group w-full">
+                  <div className="hidden md:block w-[45%] text-right pr-12">
+                    <div className="text-red-500/10 font-black text-[8rem] leading-none select-none group-hover:text-red-500/20 transition-colors duration-500">04</div>
+                  </div>
+
+                  <div className="absolute left-[28px] md:left-1/2 top-0 md:top-1/2 w-10 h-10 md:w-16 md:h-16 -translate-x-1/2 md:-translate-y-1/2 rounded-full bg-slate-950 border-4 border-red-500 shadow-[0_0_30px_rgba(239,68,68,0.6)] flex items-center justify-center z-20 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-3 h-3 md:w-5 md:h-5 rounded-full bg-white animate-pulse"></div>
+                  </div>
+
+                  <div className="w-full md:w-[45%] pl-16 md:pl-12 text-left">
+                    <div className="inline-block p-6 rounded-3xl bg-slate-900/40 backdrop-blur-md border border-white/10 hover:border-red-500/40 transition-all duration-500 hover:bg-slate-900/60 shadow-2xl group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_-15px_rgba(239,68,68,0.3)]">
+                      <div className="text-5xl md:text-6xl mb-4 opacity-90">🚫</div>
+                      <h3 className="text-xl md:text-2xl font-black text-white mb-2 uppercase tracking-wide">No Ads Ever</h3>
+                      <p className="text-slate-400 text-sm md:text-base leading-relaxed font-medium">Pure music. No interruptions.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* STEP 5: Spotify Import */}
+                <div className="relative flex flex-col md:flex-row items-center md:justify-between group w-full">
+                  <div className="w-full md:w-[45%] pl-16 md:pl-0 text-left md:text-right">
+                    <div className="inline-block p-6 rounded-3xl bg-slate-900/40 backdrop-blur-md border border-white/10 hover:border-blue-500/40 transition-all duration-500 hover:bg-slate-900/60 shadow-2xl group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.3)]">
+                      <div className="text-5xl md:text-6xl mb-4 opacity-90">📥</div>
+                      <h3 className="text-xl md:text-2xl font-black text-white mb-2 uppercase tracking-wide">Spotify Import</h3>
+                      <p className="text-slate-400 text-sm md:text-base leading-relaxed font-medium">One click, all your playlists.</p>
+                    </div>
+                  </div>
+
+                  <div className="absolute left-[28px] md:left-1/2 top-0 md:top-1/2 w-10 h-10 md:w-16 md:h-16 -translate-x-1/2 md:-translate-y-1/2 rounded-full bg-slate-950 border-4 border-blue-500 shadow-[0_0_30px_rgba(59,130,246,0.6)] flex items-center justify-center z-20 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-3 h-3 md:w-5 md:h-5 rounded-full bg-white animate-pulse"></div>
+                  </div>
+
+                  <div className="hidden md:block w-[45%] text-left pl-12">
+                    <div className="text-blue-500/10 font-black text-[8rem] leading-none select-none group-hover:text-blue-500/20 transition-colors duration-500">05</div>
+                  </div>
+                </div>
+
+                {/* STEP 6: Live Reactions */}
+                <div className="relative flex flex-col md:flex-row items-center md:justify-between group w-full">
+                  <div className="hidden md:block w-[45%] text-right pr-12">
+                    <div className="text-purple-500/10 font-black text-[8rem] leading-none select-none group-hover:text-purple-500/20 transition-colors duration-500">06</div>
+                  </div>
+
+                  <div className="absolute left-[28px] md:left-1/2 top-0 md:top-1/2 w-10 h-10 md:w-16 md:h-16 -translate-x-1/2 md:-translate-y-1/2 rounded-full bg-slate-950 border-4 border-purple-500 shadow-[0_0_30px_rgba(168,85,247,0.6)] flex items-center justify-center z-20 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-3 h-3 md:w-5 md:h-5 rounded-full bg-white animate-pulse"></div>
+                  </div>
+
+                  <div className="w-full md:w-[45%] pl-16 md:pl-12 text-left">
+                    <div className="inline-block p-6 rounded-3xl bg-slate-900/40 backdrop-blur-md border border-white/10 hover:border-purple-500/40 transition-all duration-500 hover:bg-slate-900/60 shadow-2xl group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_-15px_rgba(168,85,247,0.3)]">
+                      <div className="text-5xl md:text-6xl mb-4 opacity-90">🔥</div>
+                      <h3 className="text-xl md:text-2xl font-black text-white mb-2 uppercase tracking-wide">Live Reactions</h3>
+                      <p className="text-slate-400 text-sm md:text-base leading-relaxed font-medium">React instantly in the Vibe Room.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* STEP 7: Everywhere */}
+                <div className="relative flex flex-col md:flex-row items-center md:justify-between group w-full">
+                  <div className="w-full md:w-[45%] pl-16 md:pl-0 text-left md:text-right">
+                    <div className="inline-block p-6 rounded-3xl bg-slate-900/40 backdrop-blur-md border border-white/10 hover:border-pink-500/40 transition-all duration-500 hover:bg-slate-900/60 shadow-2xl group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_-15px_rgba(236,72,153,0.3)]">
+                      <div className="text-5xl md:text-6xl mb-4 opacity-90">📱</div>
+                      <h3 className="text-xl md:text-2xl font-black text-white mb-2 uppercase tracking-wide">Everywhere</h3>
+                      <p className="text-slate-400 text-sm md:text-base leading-relaxed font-medium">Web, iOS, Android, Desktop.</p>
+                    </div>
+                  </div>
+
+                  <div className="absolute left-[28px] md:left-1/2 top-0 md:top-1/2 w-10 h-10 md:w-16 md:h-16 -translate-x-1/2 md:-translate-y-1/2 rounded-full bg-slate-950 border-4 border-pink-500 shadow-[0_0_30px_rgba(236,72,153,0.6)] flex items-center justify-center z-20 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-3 h-3 md:w-5 md:h-5 rounded-full bg-white animate-pulse"></div>
+                  </div>
+
+                  <div className="hidden md:block w-[45%] text-left pl-12">
+                    <div className="text-pink-500/10 font-black text-[8rem] leading-none select-none group-hover:text-pink-500/20 transition-colors duration-500">07</div>
+                  </div>
+                </div>
+
+
+
               </div>
-              <h4 className="font-black text-xl mb-2 text-white uppercase">🚫 NO ADS. EVER.</h4>
-              <p className="text-sm text-slate-400 leading-relaxed font-medium">
-                Because nothing kills the mood like a car insurance commercial.
-              </p>
             </div>
           </div>
         </div>
@@ -322,12 +479,12 @@ const LandingPage: React.FC<{ onLaunch: () => void }> = ({ onLaunch }) => {
             CLAIM MY HANDLE NOW
           </button>
         </div>
-      </section>
+      </section >
 
       <footer className="py-8 border-t border-white/10 bg-black text-center text-xs text-slate-600 uppercase tracking-widest">
         &copy; 2025 VibeSync. The Revolution Will Be Streamed.
       </footer>
-    </div>
+    </div >
   );
 };
 
